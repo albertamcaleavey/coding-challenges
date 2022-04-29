@@ -17,27 +17,45 @@
 
 // Return the direction you will face after the turn.
 
-function direction(facing, turn){
-    let directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
+// function direction(facing, turn){
+//     let directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
 
-    let numToMove = turn / 45
-    let facingIdx = directions.indexOf(facing)
-    let result = null
-    let answerIdx = facingIdx + numToMove
-    console.log(numToMove)
-    if (answerIdx > 7) {
-        result = directions[answerIdx - 8]
-    } else if (answerIdx <= 7) {
-        result = directions[answerIdx]
-    }
-    if (turn < 0 && answerIdx > 7) {
-        result = directions[answerIdx - 8]
-    } else if (turn < 0 && answerIdx <= 7) {
-        result = directions[answerIdx]
-    }
+//     let numToMove = turn / 45
+//     let facingIdx = directions.indexOf(facing)
+//     let result = null
+//     let answerIdx = facingIdx + numToMove
+//     console.log(numToMove)
+//     if (answerIdx > 7) {
+//         result = directions[answerIdx - 8]
+//     } else if (answerIdx <= 7) {
+//         result = directions[answerIdx]
+//     }
+//     if (turn < 0 && answerIdx > 7) {
+//         result = directions[answerIdx - 8]
+//     } else if (turn < 0 && answerIdx <= 7) {
+//         result = directions[answerIdx]
+//     }
     
-    // return result
+//     // return result
     
-}
+// }
 
-console.log(direction("W",  495))
+// console.log(direction("W",  495))
+
+// 3. 
+
+
+function elevator(left, right, call){
+    let leftDistance = call - left < 0 ? (call - left) * -1 : call - left
+    let rightDistance = call - right < 0 ? (call - right) * -1 : call - right
+
+    if (leftDistance === rightDistance){
+      return "right"
+    } else if (leftDistance < rightDistance) {
+      return "left"
+    } else {
+      return "right"
+    }
+  }
+
+console.log(elevator(1,2,1))
