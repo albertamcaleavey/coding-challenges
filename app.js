@@ -13,6 +13,8 @@
 
 // console.log(twoSum([2,7,11,15], 9))
 
+//-------------------------------------------------------------------
+
 // 2. You receive the direction you are facing (one of the 8 directions: N, NE, E, SE, S, SW, W, NW) and a certain degree to turn (a multiple of 45, between -1080 and 1080); positive means clockwise, and negative means counter-clockwise.
 
 // Return the direction you will face after the turn.
@@ -42,20 +44,58 @@
 
 // console.log(direction("W",  495))
 
-// 3. 
+//-------------------------------------------------------------------
+
+// 3. Given 2 elevators (named "left" and "right") in a building with 3 floors (numbered 0 to 2), write a function elevator accepting 3 arguments (in order):
+
+// left - The current floor of the left elevator
+// right - The current floor of the right elevator
+// call - The floor that called an elevator
+// It should return the name of the elevator closest to the called floor ("left"/"right").
+
+// In the case where both elevators are equally distant from the called floor, choose the elevator to the right.
 
 
-function elevator(left, right, call){
-    let leftDistance = call - left < 0 ? (call - left) * -1 : call - left
-    let rightDistance = call - right < 0 ? (call - right) * -1 : call - right
+// function elevator(left, right, call){
+//     let leftDistance = call - left < 0 ? (call - left) * -1 : call - left
+//     let rightDistance = call - right < 0 ? (call - right) * -1 : call - right
 
-    if (leftDistance === rightDistance){
-      return "right"
-    } else if (leftDistance < rightDistance) {
-      return "left"
+//     if (leftDistance === rightDistance){
+//       return "right"
+//     } else if (leftDistance < rightDistance) {
+//       return "left"
+//     } else {
+//       return "right"
+//     }
+//   }
+
+// console.log(elevator(1,2,1))
+
+//-------------------------------------------------------------------
+
+// 4. Our football team finished the championship. The result of each match look like "x:y". Results of all matches are recorded in the collection.
+
+// For example: ["3:1", "2:2", "0:1", ...]
+
+// Write a function that takes such collection and counts the points of our team in the championship. Rules for counting points for each match:
+
+// if x > y: 3 points
+// if x < y: 0 point
+// if x = y: 1 point
+
+function points(games) {
+  return games.reduce((output, current) => {
+    if (current[0] > current[2]) {
+      output += 3
+    } else if (current[0] > current[2]) {
+      output += 0
     } else {
-      return "right"
+      output += 1
     }
-  }
+    return output
+  }, 0)
+}
 
-console.log(elevator(1,2,1))
+console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]))
+
+
