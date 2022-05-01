@@ -83,19 +83,43 @@
 // if x < y: 0 point
 // if x = y: 1 point
 
-function points(games) {
-  return games.reduce((output, current) => {
-    if (current[0] > current[2]) {
-      output += 3
-    } else if (current[0] > current[2]) {
-      output += 0
-    } else {
-      output += 1
+// function points(games) {
+//   return games.reduce((output, current) => {
+//     if (current[0] > current[2]) {
+//       output += 3
+//     } else if (current[0] > current[2]) {
+//       output += 0
+//     } else {
+//       output += 1
+//     }
+//     return output
+//   }, 0)
+// }
+
+// console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]))
+
+//-------------------------------------------------------------------
+
+function findNextSquare(sq) {
+  function check(input){
+  let squareRoot = Math.sqrt(input) 
+  return Number.isInteger(squareRoot)
+  }
+
+  if (!check(sq)) {
+    return -1
+  } else {
+    let result = 0
+    while(check(sq + 1) === false) {
+      sq ++
+      result = sq + 1
     }
-    return output
-  }, 0)
+    return result
+  }
 }
 
-console.log(points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"]))
+function findNextSquare(sq) {
+  return Math.sqrt(sq)%1? -1 : Math.pow(Math.sqrt(sq)+1,2)
+}
 
-
+console.log(findNextSquare(121))
