@@ -147,8 +147,19 @@
 //   }
 // }
 //-------------------------------------------------------------------
-function pillars(num_pill, dist, width) {
-  return num_pill > 1 ? ((num_pill - 1) * dist * 100) + (num_pill - 2)* width : ((num_pill - 1) * dist * 100)
-}
+// function pillars(num_pill, dist, width) {
+//   return num_pill > 1 ? ((num_pill - 1) * dist * 100) + (num_pill - 2)* width : ((num_pill - 1) * dist * 100)
+// }
 
-console.log(pillars(11, 15, 30))
+// console.log(pillars(11, 15, 30))
+
+function twoSum (nums, target) {
+    for (let i = 0; i < nums.length - 1; i ++) {
+    for (let j = i + 1; j < nums.length; j ++ ) {
+        if (nums[i] + nums[j] === target){
+            return [i, j]
+            }
+        }
+    }
+
+}
