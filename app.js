@@ -146,6 +146,7 @@
 //     return 0
 //   }
 // }
+
 //-------------------------------------------------------------------
 // function pillars(num_pill, dist, width) {
 //   return num_pill > 1 ? ((num_pill - 1) * dist * 100) + (num_pill - 2)* width : ((num_pill - 1) * dist * 100)
@@ -153,13 +154,22 @@
 
 // console.log(pillars(11, 15, 30))
 
-function twoSum (nums, target) {
-    for (let i = 0; i < nums.length - 1; i ++) {
-    for (let j = i + 1; j < nums.length; j ++ ) {
-        if (nums[i] + nums[j] === target){
-            return [i, j]
-            }
-        }
-    }
+//-------------------------------------------------------------------
+// Your task is to sum the differences between consecutive pairs in the array in descending order.
 
+function sumOfDifferences(arr) {
+    if (!arr.length || arr.length === 1) {
+        return 0
+    } else {
+        let descendingArr = arr.sort((a, b)=> a > b ? -1 : 1)
+        let result = 0
+        for (let i = 1; i < descendingArr.length; i++) {
+            result += Math.abs(descendingArr[i] - descendingArr[i - 1]);
+        }
+        return result
+    }
+    
 }
+
+console.log(sumOfDifferences([1, 2, 10]))
+
