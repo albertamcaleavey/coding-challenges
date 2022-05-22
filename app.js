@@ -158,17 +158,20 @@
 // Your task is to sum the differences between consecutive pairs in the array in descending order.
 
 function sumOfDifferences(arr) {
-    if (!arr.length || arr.length === 1) {
-        return 0
-    } else {
-        let descendingArr = arr.sort((a, b)=> a > b ? -1 : 1)
-        let result = 0
-        for (let i = 1; i < descendingArr.length; i++) {
-            result += Math.abs(descendingArr[i] - descendingArr[i - 1]);
-        }
-        return result
-    }
-    
+    // if (!arr.length || arr.length === 1) {
+    //     return 0
+    // } else {
+    //     let descendingArr = arr.sort((a, b)=> a > b ? -1 : 1)
+    //     let sum = 0
+    //     for (let i = 1; i < descendingArr.length; i++) {
+    //         sum += descendingArr[i - 1] - descendingArr[i] 
+    //     }
+    //     return sum
+    // }
+
+    //ALTERNATE SOLUTION:
+    return Math.min(...arr)
+    // return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0
 }
 
 console.log(sumOfDifferences([1, 2, 10]))
