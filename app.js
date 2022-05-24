@@ -157,22 +157,37 @@
 //-------------------------------------------------------------------
 // Your task is to sum the differences between consecutive pairs in the array in descending order.
 
-function sumOfDifferences(arr) {
-    // if (!arr.length || arr.length === 1) {
-    //     return 0
-    // } else {
-    //     let descendingArr = arr.sort((a, b)=> a > b ? -1 : 1)
-    //     let sum = 0
-    //     for (let i = 1; i < descendingArr.length; i++) {
-    //         sum += descendingArr[i - 1] - descendingArr[i] 
-    //     }
-    //     return sum
-    // }
+// function sumOfDifferences(arr) {
+//     // if (!arr.length || arr.length === 1) {
+//     //     return 0
+//     // } else {
+//     //     let descendingArr = arr.sort((a, b)=> a > b ? -1 : 1)
+//     //     let sum = 0
+//     //     for (let i = 1; i < descendingArr.length; i++) {
+//     //         sum += descendingArr[i - 1] - descendingArr[i] 
+//     //     }
+//     //     return sum
+//     // }
 
-    //ALTERNATE SOLUTION:
-    return Math.min(...arr)
-    // return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0
+//     //ALTERNATE SOLUTION:
+//     // return Math.min(...arr)
+//     // return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0
+// }
+
+// console.log(sumOfDifferences([1, 2, 10]))
+
+//-------------------------------------------------------------------
+// Your function takes two arguments:
+
+// current father's age (years)
+// current age of his son (years)
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+    return sonYearsOld * 2 > dadYearsOld ? sonYearsOld * 2 - dadYearsOld : dadYearsOld - sonYearsOld * 2
+
+    // ALTERNATIVE SOLUTION
+    return Math.abs(dadYearsOld - 2 * sonYearsOld)
 }
 
-console.log(sumOfDifferences([1, 2, 10]))
-
+console.log(twiceAsOld(55,30))
