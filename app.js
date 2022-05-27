@@ -183,11 +183,33 @@
 // current age of his son (years)
 // Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
 
-function twiceAsOld(dadYearsOld, sonYearsOld) {
-    return sonYearsOld * 2 > dadYearsOld ? sonYearsOld * 2 - dadYearsOld : dadYearsOld - sonYearsOld * 2
+// function twiceAsOld(dadYearsOld, sonYearsOld) {
+//     return sonYearsOld * 2 > dadYearsOld ? sonYearsOld * 2 - dadYearsOld : dadYearsOld - sonYearsOld * 2
 
-    // ALTERNATIVE SOLUTION
-    return Math.abs(dadYearsOld - 2 * sonYearsOld)
+//     // ALTERNATIVE SOLUTION
+//     return Math.abs(dadYearsOld - 2 * sonYearsOld)
+// }
+
+// console.log(twiceAsOld(55,30))
+
+//-------------------------------------------------------------------
+// I love you
+// a little
+// a lot
+// passionately
+// madly
+// not at all
+// When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+
+// Your goal in this kata is to determine which phrase the girls would say for a flower of a given number of petals, where nb_petals > 0.
+
+function howMuchILoveYou(nbPetals) {
+    let petalsArr = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"]
+    let answer = null
+    for (let i = 0; i < nbPetals; i++) {
+        answer = petalsArr[i]
+    }
+    return answer
 }
 
-console.log(twiceAsOld(55,30))
+console.log(howMuchILoveYou(7))
