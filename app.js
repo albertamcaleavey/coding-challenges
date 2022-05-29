@@ -203,13 +203,27 @@
 
 // Your goal in this kata is to determine which phrase the girls would say for a flower of a given number of petals, where nb_petals > 0.
 
-function howMuchILoveYou(nbPetals) {
-    let petalsArr = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"]
-    let answer = null
-    for (let i = 0; i < nbPetals; i++) {
-        answer = petalsArr[i]
-    }
-    return answer
-}
+// function howMuchILoveYou(nbPetals) {
+//     let petalsArr = ["I love you", "a little", "a lot", "passionately", "madly", "not at all"]
+//     let answer = null
+//     for (let i = 0; i < nbPetals; i++) {
+//         answer = petalsArr[i]
+//     }
+//     return answer
+// }
 
-console.log(howMuchILoveYou(7))
+// console.log(howMuchILoveYou(7))
+
+//-------------------------------------------------------------------
+// Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+function between(a, b) {
+    solution = []
+    for (let i = a; i <= b; i++){
+            solution.push(i)
+        }
+        return solution
+    }
+
+
+console.log(between(1, 4))
