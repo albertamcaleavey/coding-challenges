@@ -217,16 +217,16 @@
 //-------------------------------------------------------------------
 // Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
 
-function between(a, b) {
-    solution = []
-    for (let i = a; i <= b; i++){
-            solution.push(i)
-        }
-        return solution
-    }
+// function between(a, b) {
+//     solution = []
+//     for (let i = a; i <= b; i++){
+//             solution.push(i)
+//         }
+//         return solution
+//     }
 
 
-console.log(between(1, 4))
+// console.log(between(1, 4))
 
 //-------------------------------------------------------------------
 // You get any card as an argument. Your task is to return the suit of this card (in lowercase).
@@ -237,3 +237,18 @@ console.log(between(1, 4))
 // ('3♦') -> return 'diamonds'
 // ('3♥') -> return 'hearts'
 // ('3♠') -> return 'spades'
+
+//-------------------------------------------------------------------
+
+
+function finalGrade (exam, projects) {
+        if (exam > 90 || projects > 10) return 100
+        if (exam > 75 && projects >= 5) return 90
+        if (exam > 50 && projects >= 2) return 75
+        return 0
+        
+    }
+
+
+
+console.log(finalGrade(100, 12))
